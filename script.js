@@ -6,6 +6,20 @@ const restartButton = document.getElementById('restartButton');
 let playerLeft = 50;
 let isAlive = false; // Track if the player is alive
 let obstacleInterval, collisionInterval;
+let youtubePlayer; // Create a variable for the YouTube player
+
+// Load YouTube API
+function onYouTubeIframeAPIReady() {
+    youtubePlayer = new YT.Player('backgroundVideo', {
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
+}
+
+function onPlayerReady(event) {
+    event.target.playVideo(); // Start playing the video automatically
+}
 
 startButton.addEventListener('click', startGame);
 restartButton.addEventListener('click', restartGame);
@@ -95,3 +109,9 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// Load the YouTube IFrame API asynchronously
+const tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+const firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
