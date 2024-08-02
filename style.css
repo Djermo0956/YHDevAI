@@ -8,22 +8,22 @@ body {
     overflow: hidden;
 }
 
+#backgroundVideo {
+    position: absolute;
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    z-index: 0; /* Behind the game elements */
+    pointer-events: none; /* Allow clicks to pass through the video */
+}
+
 #gameContainer {
     position: relative;
     width: 800px;
     height: 400px;
     overflow: hidden;
     border: 2px solid #000;
-}
-
-#backgroundVideo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    transform: translate(-50%, -50%);
 }
 
 
@@ -114,9 +114,5 @@ body {
     padding: 10px 20px;
     font-size: 18px;
     cursor: pointer;
-    z-index: 2; /* Ensure buttons are above other elements */
-}
-
-#restartButton {
-    display: none; /* Hide restart button initially */
+    z-index: 1; /* Ensure buttons are above other elements */
 }
