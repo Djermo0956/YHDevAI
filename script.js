@@ -43,3 +43,15 @@ let isAlive = setInterval(() => {
         alert('Game Over!');
     }
 }, 10);
+
+function moveObstacle() {
+    let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue('left'));
+    obstacle.style.left = obstacleLeft - 5 + 'px';
+
+    if (obstacleLeft <= 0) {
+        obstacle.style.left = '800px'; // Reset position to the right of the screen
+    }
+}
+
+// Call the function repeatedly
+setInterval(moveObstacle, 20);
