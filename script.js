@@ -86,23 +86,32 @@ function removeFromCart(id) {
 function displayCart() {
     const cartItems = document.getElementById('cart-items');
     cartItems.innerHTML = '';
+    console.log('Displaying cart:', cart); // Debugging line
     if (cart.length === 0) {
         cartItems.innerHTML = '<p>Your cart is empty</p>';
     } else {
-        cart.forEach(item => {
-            const product = products.find(p => p.id == item.id);
-            const cartItem = document.createElement('div');
-            cartItem.classList.add('border', 'p-4', 'bg-gray-800', 'rounded', 'mb-4');
-            cartItem.innerHTML = `
-                <h3 class="text-lg font-semibold">${product.name}</h3>
-                <p class="text-gray-400">Quantity: ${item.quantity}</p>
-                <p class="text-orange-400 font-bold">$${(product.price * item.quantity).toFixed(2)}</p>
-                <button onclick="removeFromCart(${item.id})" class="bg-red-500 text-white px-4 py-2 rounded mt-4">Remove</button>
-            `;
-            cartItems.appendChild(cartItem);
-        });
+        fetch('products.json')
+            .then(response => response.json())
+            .then(products => {
+                cart.forEach(item => {
+                    const product = products.find(p => p.id == item.id);
+                    if (product) {
+                        const cartItem = document.createElement('div');
+                        cartItem.classList.add('border', 'p-4', 'bg-white', 'rounded', 'mb-4');
+                        cartItem.innerHTML = `
+                            <h3 class="text-lg font-semibold">${product.name}</h3>
+                            <p class="text-gray-700">Quantity: ${item.quantity}</p>
+                            <p class="text-blue-500 font-bold">$${(product.price * item.quantity).toFixed(2)}</p>
+                            <button onclick="removeFromCart(${item.id})" class="bg-red-500 text-white px-4 py-2 rounded mt-4">Remove</button>
+                        `;
+                        cartItems.appendChild(cartItem);
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching products:', error));
     }
 }
+
 
 // Checkout form submission
 document.getElementById('checkout-form')?.addEventListener('submit', function(e) {
