@@ -1,23 +1,50 @@
 const player = document.getElementById('player');
 const obstacle = document.getElementById('obstacle');
-let playerLeft = 50;
+const startButton = document.getElementById('startButton');
+const restartButton = document.getElementById('restartButton');
 
-document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space') {
-        jump();
-    } else if (e.code === 'ArrowLeft') {
-        moveLeft();
-    } else if (e.code === 'ArrowRight') {
-        moveRight();
-    }
-});
+let playerLeft = 50;
+let isAlive = false; // Track if the player is alive
+let obstacleInterval, collisionInterval;
+
+startButton.addEventListener('click', startGame);
+restartButton.addEventListener('click', restartGame);
+
+function startGame() {
+    isAlive = true; // Set the game state to alive
+    playerLeft = 50; // Reset player position
+    player.style.left = playerLeft + 'px';
+    player.style.bottom = '0'; // Reset player position vertically
+
+    obstacle.style.left = '800px'; // Reset obstacle position
+
+    startButton.style.display = 'none'; // Hide start button
+    restartButton.style.display = 'none'; // Hide restart button
+
+    obstacleInterval = setInterval(moveObstacle, 20);
+    collisionInterval = setInterval(checkCollision, 10);
+}
+
+function restartGame() {
+    isAlive = true; // Set the game state to alive
+    playerLeft = 50; // Reset player position
+    player.style.left = playerLeft + 'px';
+    player.style.bottom = '0'; // Reset player position vertically
+
+    obstacle.style.left = '800px'; // Reset obstacle position
+
+    restartButton.style.display = 'none'; // Hide restart button
+
+    obstacleInterval = setInterval(moveObstacle, 20);
+    collisionInterval = setInterval(checkCollision, 10);
+}
 
 function jump() {
     if (!player.classList.contains('jump')) {
         player.classList.add('jump');
         setTimeout(() => {
             player.classList.remove('jump');
-        }, 600); // Matches the animation duration in CSS
+        }, 600);
     }
 }
 
@@ -29,7 +56,7 @@ function moveLeft() {
 }
 
 function moveRight() {
-    if (playerLeft < 750) { // Ensures the player does not move out of the container
+    if (playerLeft < 750) {
         playerLeft += 10;
         player.style.left = playerLeft + 'px';
     }
@@ -44,14 +71,27 @@ function moveObstacle() {
     }
 }
 
-// Call the function repeatedly
-setInterval(moveObstacle, 20);
-
-let isAlive = setInterval(() => {
+function checkCollision() {
     let playerTop = parseInt(window.getComputedStyle(player).getPropertyValue('top'));
     let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue('left'));
 
-    if (obstacleLeft < playerLeft + 50 && obstacleLeft > playerLeft && playerTop >= 350) {
-        alert('Game Over!');
+    if (isAlive && obstacleLeft < playerLeft + 50 && obstacleLeft > playerLeft && playerTop >= 350) {
+        alert('Game Over!'); // Game over alert
+        isAlive = false; // Set alive state to false
+        clearInterval(obstacleInterval); // Stop moving the obstacle
+        clearInterval(collisionInterval); // Stop collision checking
+        restartButton.style.display = 'block'; // Show restart button
     }
-}, 10);
+}
+
+document.addEventListener('keydown', (e) => {
+    if (isAlive) {
+        if (e.code === 'Space') {
+            jump();
+        } else if (e.code === 'ArrowLeft') {
+            moveLeft();
+        } else if (e.code === 'ArrowRight') {
+            moveRight();
+        }
+    }
+});
