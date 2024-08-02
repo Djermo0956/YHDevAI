@@ -2,24 +2,11 @@ const player = document.getElementById('player');
 const obstacle = document.getElementById('obstacle');
 const startButton = document.getElementById('startButton');
 const restartButton = document.getElementById('restartButton');
+const startOverlay = document.getElementById('startOverlay');
 
 let playerLeft = 50;
 let isAlive = false; // Track if the player is alive
 let obstacleInterval, collisionInterval;
-let youtubePlayer; // Create a variable for the YouTube player
-
-// Load YouTube API
-function onYouTubeIframeAPIReady() {
-    youtubePlayer = new YT.Player('backgroundVideo', {
-        events: {
-            'onReady': onPlayerReady
-        }
-    });
-}
-
-function onPlayerReady(event) {
-    event.target.playVideo(); // Start playing the video automatically
-}
 
 startButton.addEventListener('click', startGame);
 restartButton.addEventListener('click', restartGame);
@@ -32,8 +19,7 @@ function startGame() {
 
     obstacle.style.left = '800px'; // Reset obstacle position
 
-    startButton.style.display = 'none'; // Hide start button
-    restartButton.style.display = 'none'; // Hide restart button
+    startOverlay.style.display = 'none'; // Hide start overlay
 
     obstacleInterval = setInterval(moveObstacle, 20);
     collisionInterval = setInterval(checkCollision, 10);
@@ -109,9 +95,3 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
-
-// Load the YouTube IFrame API asynchronously
-const tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-const firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
