@@ -125,12 +125,27 @@ main {
     padding: 20px;
     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5), -8px -8px 20px rgba(13, 13, 13, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
+    height: 400px; /* Set a fixed height for the card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
 }
 
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3), -10px -10px 30px rgba(13, 13, 13, 0.2);
 }
+
+.product-card img {
+    width: 100%; /* Make the image take the full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop the image while maintaining its aspect ratio */
+    aspect-ratio: 4 / 5; /* Set the aspect ratio to 4:5 */
+    width: 80%; /* Adjust this value as necessary for padding */
+    max-height: 80%; /* Adjust max-height to keep the image within the card */
+}
+
 
 /* Abstract Shapes */
 .shape {
