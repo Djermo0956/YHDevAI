@@ -12,12 +12,20 @@ body {
     position: relative;
     width: 800px;
     height: 400px;
-    background-color: #fff;
     overflow: hidden;
     border: 2px solid #000;
-    background-image: linear-gradient(0deg, #FF8C1A 0%, #121212 100%);
-    animation: moveBg 5s linear infinite;
 }
+
+#backgroundVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire container */
+    z-index: 0; /* Ensure the video is behind the game elements */
+}
+
 
 @keyframes moveBg {
     from {
@@ -62,7 +70,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 1; /* Ensures this is above the video */
     overflow: hidden;
 }
 
