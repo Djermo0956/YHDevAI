@@ -127,16 +127,25 @@ main {
 }
 
 .product-card {
-    height: 400px; /* Set a fixed height for the card */
+    height: 300px; /* Fixed height for product cards */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
+    padding: 10px; /* Add padding to the card */
+    margin-bottom: 20px; /* Space below each card */
 }
 
 .product-card img {
-    width: 80%; /* Adjust this value as necessary for padding */
-    max-height: 80%; /* Adjust max-height to keep the image within the card */
+    width: 100%; /* Make the image take the full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop the image while maintaining its aspect ratio */
+    aspect-ratio: 4 / 5; /* Set the aspect ratio to 4:5 */
+    max-height: 250px; /* Limit the max height of the image */
+}
+
+#product-list {
+    margin-top: 20px; /* Space above the product list */
 }
 
 .product-card:hover {
