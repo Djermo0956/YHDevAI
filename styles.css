@@ -7,37 +7,33 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    position: relative;
-    overflow: hidden; /* Prevent scrollbars from appearing */
+    overflow: hidden; /* Hide overflow due to particles */
 }
 
-/* Background Layer */
+/* Background Styles */
 .background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Prevent interaction */
-    z-index: 0; /* Behind other elements */
+    z-index: -1;
+    overflow: hidden;
 }
 
-/* Particles */
 .particle {
     position: absolute;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.8);
-    opacity: 0.7;
-    animation: particle-move linear infinite;
+    background: rgba(255, 255, 255, 0.8);
+    animation: move 10s infinite alternate;
 }
 
-/* Particle Animation */
-@keyframes particle-move {
+@keyframes move {
     0% {
-        transform: translate(0, 0);
+        transform: translateY(0) scale(1);
     }
     100% {
-        transform: translate(calc(100vw - 50px), calc(100vh - 50px));
+        transform: translateY(-30px) scale(0.8);
     }
 }
 
@@ -46,6 +42,8 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
+    background: linear-gradient(135deg, #4a90e2, #8e44ad);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Button Styles */
@@ -72,10 +70,43 @@ button:hover {
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2), -10px -10px 30px rgba(255, 255, 255, 0.8);
 }
 
+/* Abstract Shapes */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.shape:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    left: 10%;
+    background: linear-gradient(90deg, #ff6b6b, #ff8c1a);
+}
+
+.shape:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    bottom: 20%;
+    right: 5%;
+    background: linear-gradient(90deg, #1abc9c, #2ecc71);
+}
+
+.shape:nth-child(3) {
+    width: 180px;
+    height: 180px;
+    top: 50%;
+    right: 10%;
+    background: linear-gradient(90deg, #3498db, #8e44ad);
+}
+
 /* Checkout Button Styles */
 .checkout-button {
     display: inline-block;
-    background-color: #4CAF50; /* Green */
+    background-color: #e67e22; /* Orange */
     color: white;
     padding: 12px 20px;
     text-align: center;
@@ -85,7 +116,7 @@ button:hover {
 }
 
 .checkout-button:hover {
-    background-color: #45a049;
+    background-color: #d35400; /* Darker orange */
     transform: scale(1.05);
 }
 
