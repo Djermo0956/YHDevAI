@@ -106,3 +106,34 @@ document.getElementById('checkout-form').addEventListener('submit', function(e) 
 if (document.getElementById('cart-items')) {
     displayCart();
 }
+
+// Mouse Movement Interaction for Shapes
+const shapesContainer = document.createElement('div');
+shapesContainer.className = 'shapes-container';
+document.body.appendChild(shapesContainer);
+
+// Create shapes
+for (let i = 0; i < 10; i++) {
+    const shape = document.createElement('div');
+    shape.className = 'shape';
+    shape.style.width = `${Math.random() * 100 + 50}px`; // Random size
+    shape.style.height = shape.style.width; // Keep it a square
+    shape.style.top = `${Math.random() * 100}vh`;
+    shape.style.left = `${Math.random() * 100}vw`;
+    shapesContainer.appendChild(shape);
+}
+
+// Mouse movement effect
+document.addEventListener('mousemove', (event) => {
+    const { clientX, clientY } = event;
+    const shapes = document.querySelectorAll('.shape');
+    
+    shapes.forEach(shape => {
+        const rect = shape.getBoundingClientRect();
+        const dx = clientX - (rect.left + rect.width / 2);
+        const dy = clientY - (rect.top + rect.height / 2);
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const scale = Math.max(1 - distance / 400, 0.5); // Scale based on distance
+        shape.style.transform = `scale(${scale}) translate(${dx / 20}px, ${dy / 20}px)`;
+    });
+});
