@@ -2,7 +2,6 @@ const player = document.getElementById('player');
 const obstacle = document.getElementById('obstacle');
 const startButton = document.getElementById('startButton');
 const restartButton = document.getElementById('restartButton');
-const backgroundVideo = document.getElementById('backgroundVideo');
 
 let playerLeft = 50;
 let isAlive = false; // Track if the player is alive
@@ -22,8 +21,6 @@ function startGame() {
     startButton.style.display = 'none'; // Hide start button
     restartButton.style.display = 'none'; // Hide restart button
 
-    backgroundVideo.play(); // Start playing the video with sound
-
     obstacleInterval = setInterval(moveObstacle, 20);
     collisionInterval = setInterval(checkCollision, 10);
 }
@@ -37,9 +34,6 @@ function restartGame() {
     obstacle.style.left = '800px'; // Reset obstacle position
 
     restartButton.style.display = 'none'; // Hide restart button
-
-    backgroundVideo.currentTime = 0; // Reset video to start
-    backgroundVideo.play(); // Start playing the video again
 
     obstacleInterval = setInterval(moveObstacle, 20);
     collisionInterval = setInterval(checkCollision, 10);
@@ -87,7 +81,6 @@ function checkCollision() {
         clearInterval(obstacleInterval); // Stop moving the obstacle
         clearInterval(collisionInterval); // Stop collision checking
         restartButton.style.display = 'block'; // Show restart button
-        backgroundVideo.pause(); // Pause video on game over
     }
 }
 
