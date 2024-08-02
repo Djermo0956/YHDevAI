@@ -20,6 +20,7 @@ body {
     height: 100%;
     z-index: -1;
     overflow: hidden; /* Hide overflow due to particles */
+    background-color: #121212;
 }
 
 .particle {
