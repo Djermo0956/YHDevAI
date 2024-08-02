@@ -1,24 +1,114 @@
-
 [
-  {
-    "id": 1,
-    "name": "Product 1",
-    "description": "Description for product 1",
-    "price": 29.99,
-    "image": "https://via.placeholder.com/150"
-  },
-  {
-    "id": 2,
-    "name": "Product 2",
-    "description": "Description for product 2",
-    "price": 39.99,
-    "image": "https://via.placeholder.com/150"
-  },
-  {
-    "id": 3,
-    "name": "Product 3",
-    "description": "Description for product 3",
-    "price": 49.99,
-    "image": "https://via.placeholder.com/150"
-  }
+    {
+        "id": 1,
+        "name": "Product 1",
+        "description": "This is a great product.",
+        "price": 29.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 2,
+        "name": "Product 2",
+        "description": "This product is even better.",
+        "price": 49.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 3,
+        "name": "Product 3",
+        "description": "A must-have item for everyone.",
+        "price": 19.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 4,
+        "name": "Product 4",
+        "description": "High quality and low price.",
+        "price": 15.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 5,
+        "name": "Product 5",
+        "description": "Get this fantastic deal now!",
+        "price": 39.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 6,
+        "name": "Product 6",
+        "description": "Don't miss out on this one.",
+        "price": 24.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 7,
+        "name": "Product 7",
+        "description": "A product you'll love!",
+        "price": 34.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 8,
+        "name": "Product 8",
+        "description": "An essential item for your needs.",
+        "price": 44.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 9,
+        "name": "Product 9",
+        "description": "Top-rated by customers.",
+        "price": 59.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 10,
+        "name": "Slaaf #1",
+        "description": "Limited stock available.",
+        "price": 69.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 11,
+        "name": "Katoen",
+        "description": "The latest in our collection.",
+        "price": 74.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 12,
+        "name": "Slaaf #6",
+        "description": "Quality and affordability combined.",
+        "price": 89.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 13,
+        "name": "Slaaf #19",
+        "description": "Stylish and functional.",
+        "price": 99.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 14,
+        "name": "Banaan (1 tros)",
+        "description": "This one is a crowd favorite.",
+        "price": 89.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 15,
+        "name": "Cocosnoten (min. 3x)",
+        "description": "A great choice for gifts.",
+        "price": 79.99,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 16,
+        "name": "Product 16",
+        "description": "Don't hesitate to buy this!",
+        "price": 109.99,
+        "image": "https://via.placeholder.com/150"
+    }
 ]
