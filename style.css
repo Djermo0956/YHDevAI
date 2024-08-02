@@ -15,9 +15,8 @@ body {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     z-index: 0; /* Behind the game elements */
-    pointer-events: none; /* Allow clicks to pass through the video */
-    background-color: rgba(0, 0, 0, 0.5); /* Temporary color for visibility */
 }
+
 
 #gameContainer {
     position: relative;
@@ -27,7 +26,18 @@ body {
     border: 2px solid #000;
 }
 
-
+#startOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex; /* Center the button */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1; /* Above the video */
+}
 
 @keyframes moveBg {
     from {
@@ -109,13 +119,15 @@ body {
         transform: translateY(0);
     }
 }
-#startButton, #restartButton {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%);
+#startButton {
     padding: 10px 20px;
     font-size: 18px;
     cursor: pointer;
-    z-index: 1; /* Ensure buttons are above other elements */
+}
+#restartButton {
+    position: absolute;
+    top: 10px; /* Positioning for visibility */
+    left: 10px;
+    z-index: 1; /* Ensure it appears above everything else */
+    display: none; /* Hidden initially */
 }
