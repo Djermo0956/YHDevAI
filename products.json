@@ -1,114 +1,66 @@
 [
     {
         "id": 1,
-        "name": "Product 1",
-        "description": "This is a great product.",
-        "price": 29.99,
-        "image": "https://via.placeholder.com/150"
+        "name": "Stylish Backpack",
+        "description": "A sleek and stylish backpack for everyday use.",
+        "price": 49.99,
+        "image": "https://images.unsplash.com/photo-1511672020603-7c73ed7604cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3MDF8MHwxfGFsbHwxfHx8fHx8fHwxNjY3MjAwNjYz&ixlib=rb-1.2.1&q=80&w=400",
+        "onSale": false
     },
     {
         "id": 2,
-        "name": "Product 2",
-        "description": "This product is even better.",
-        "price": 49.99,
-        "image": "https://via.placeholder.com/150"
+        "name": "Wireless Headphones",
+        "description": "Experience premium sound quality with these wireless headphones.",
+        "price": 89.99,
+        "image": "https://images.unsplash.com/photo-1529661146647-8f5e8a50dbbb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3MDF8MHwxfGFsbHwyfHx8fHx8fHwxNjY3MjAwNjYz&ixlib=rb-1.2.1&q=80&w=400",
+        "onSale": true
     },
     {
         "id": 3,
-        "name": "Product 3",
-        "description": "A must-have item for everyone.",
-        "price": 19.99,
-        "image": "https://via.placeholder.com/150"
+        "name": "Sports Watch",
+        "description": "A smart sports watch with various fitness tracking features.",
+        "price": 199.99,
+        "image": "https://images.unsplash.com/photo-1519265091887-b5d4a3e34b54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3MDF8MHwxfGFsbHwzfHx8fHx8fHwxNjY3MjAwNjYz&ixlib=rb-1.2.1&q=80&w=400",
+        "onSale": false
     },
     {
         "id": 4,
-        "name": "Product 4",
-        "description": "High quality and low price.",
-        "price": 15.99,
-        "image": "https://via.placeholder.com/150"
+        "name": "Running Shoes",
+        "description": "Comfortable and stylish running shoes for all terrains.",
+        "price": 79.99,
+        "image": "https://images.unsplash.com/photo-1584521984922-5efc33c8c4ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3MDF8MHwxfGFsbHw0fHx8fHx8fHwxNjY3MjAwNjYz&ixlib=rb-1.2.1&q=80&w=400",
+        "onSale": true
     },
     {
         "id": 5,
-        "name": "Product 5",
-        "description": "Get this fantastic deal now!",
+        "name": "Leather Wallet",
+        "description": "A classy leather wallet that complements your style.",
         "price": 39.99,
-        "image": "https://via.placeholder.com/150"
+        "image": "https://images.unsplash.com/photo-1510972152483-b64b69415a3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3MDF8MHwxfGFsbHw1fHx8fHx8fHwxNjY3MjAwNjYz&ixlib=rb-1.2.1&q=80&w=400",
+        "onSale": false
     },
     {
         "id": 6,
-        "name": "Product 6",
-        "description": "Don't miss out on this one.",
-        "price": 24.99,
-        "image": "https://via.placeholder.com/150"
+        "name": "Stylish Sunglasses",
+        "description": "Protect your eyes in style with these fashionable sunglasses.",
+        "price": 29.99,
+        "image": "https://images.unsplash.com/photo-1521719744768-3dba5c4d7f25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3MDF8MHwxfGFsbHw2fHx8fHx8fHwxNjY3MjAwNjYz&ixlib=rb-1.2.1&q=80&w=400",
+        "onSale": true
     },
     {
         "id": 7,
-        "name": "Product 7",
-        "description": "A product you'll love!",
-        "price": 34.99,
-        "image": "https://via.placeholder.com/150"
+        "name": "Bluetooth Speaker",
+        "description": "A portable Bluetooth speaker with amazing sound quality.",
+        "price": 59.99,
+        "image": "https://images.unsplash.com/photo-1513990413390-b27f51c6cb2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3MDF8MHwxfGFsbHw3fHx8fHx8fHwxNjY3MjAwNjYz&ixlib=rb-1.2.1&q=80&w=400",
+        "onSale": false
     },
     {
         "id": 8,
-        "name": "Product 8",
-        "description": "An essential item for your needs.",
-        "price": 44.99,
-        "image": "https://via.placeholder.com/150"
-    },
-    {
-        "id": 9,
-        "name": "Product 9",
-        "description": "Top-rated by customers.",
-        "price": 59.99,
-        "image": "https://via.placeholder.com/150"
-    },
-    {
-        "id": 10,
-        "name": "Slaaf #1",
-        "description": "Limited stock available.",
-        "price": 69.99,
-        "image": "https://via.placeholder.com/150"
-    },
-    {
-        "id": 11,
-        "name": "Katoen",
-        "description": "The latest in our collection.",
-        "price": 74.99,
-        "image": "https://via.placeholder.com/150"
-    },
-    {
-        "id": 12,
-        "name": "Slaaf #6",
-        "description": "Quality and affordability combined.",
-        "price": 89.99,
-        "image": "https://via.placeholder.com/150"
-    },
-    {
-        "id": 13,
-        "name": "Slaaf #19",
-        "description": "Stylish and functional.",
-        "price": 99.99,
-        "image": "https://via.placeholder.com/150"
-    },
-    {
-        "id": 14,
-        "name": "Banaan (1 tros)",
-        "description": "This one is a crowd favorite.",
-        "price": 89.99,
-        "image": "https://via.placeholder.com/150"
-    },
-    {
-        "id": 15,
-        "name": "Cocosnoten (min. 3x)",
-        "description": "A great choice for gifts.",
-        "price": 79.99,
-        "image": "https://via.placeholder.com/150"
-    },
-    {
-        "id": 16,
-        "name": "Product 16",
-        "description": "Don't hesitate to buy this!",
-        "price": 109.99,
-        "image": "https://via.placeholder.com/150"
+        "name": "Gaming Mouse",
+        "description": "An ergonomic gaming mouse with customizable settings.",
+        "price": 49.99,
+        "image": "https://images.unsplash.com/photo-1581281531415-0d32c01f7494?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3MDF8MHwxfGFsbHw4fHx8fHx8fHwxNjY3MjAwNjYz&ixlib=rb-1.2.1&q=80&w=400",
+        "onSale": true
     }
 ]
