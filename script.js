@@ -17,7 +17,7 @@ function jump() {
         player.classList.add('jump');
         setTimeout(() => {
             player.classList.remove('jump');
-        }, 300);
+        }, 600); // Matches the animation duration in CSS
     }
 }
 
