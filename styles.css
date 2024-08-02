@@ -83,6 +83,7 @@ main {
     filter: blur(50px);
     opacity: 0.5;
     pointer-events: none;
+    transition: transform 0.2s; /* Smooth scaling */
 }
 
 .shape:nth-child(1) {
