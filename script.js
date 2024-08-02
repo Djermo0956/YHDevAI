@@ -35,15 +35,6 @@ function moveRight() {
     }
 }
 
-let isAlive = setInterval(() => {
-    let playerTop = parseInt(window.getComputedStyle(player).getPropertyValue('top'));
-    let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue('left'));
-
-    if (obstacleLeft < playerLeft + 50 && obstacleLeft > playerLeft && playerTop >= 350) {
-        alert('Game Over!');
-    }
-}, 10);
-
 function moveObstacle() {
     let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue('left'));
     obstacle.style.left = obstacleLeft - 5 + 'px';
@@ -55,3 +46,12 @@ function moveObstacle() {
 
 // Call the function repeatedly
 setInterval(moveObstacle, 20);
+
+let isAlive = setInterval(() => {
+    let playerTop = parseInt(window.getComputedStyle(player).getPropertyValue('top'));
+    let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue('left'));
+
+    if (obstacleLeft < playerLeft + 50 && obstacleLeft > playerLeft && playerTop >= 350) {
+        alert('Game Over!');
+    }
+}, 10);
