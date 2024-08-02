@@ -1,3 +1,21 @@
+// Particle generation for interactive background
+const numParticles = 100; // Number of particles
+const backgroundDiv = document.createElement('div');
+backgroundDiv.className = 'background';
+document.body.appendChild(backgroundDiv); // Append the background div to the body
+
+for (let i = 0; i < numParticles; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    const size = Math.random() * 10 + 5; // Random size between 5px and 15px
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.top = `${Math.random() * 100}vh`; // Random vertical position
+    particle.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+    particle.style.animationDuration = `${Math.random() * 5 + 5}s`; // Random duration between 5s and 10s
+    backgroundDiv.appendChild(particle);
+}
+
 // Load products and display them
 fetch('products.json')
     .then(response => response.json())
@@ -5,7 +23,7 @@ fetch('products.json')
         const productList = document.getElementById('product-list');
         products.forEach(product => {
             const productCard = document.createElement('div');
-            productCard.classList.add('border', 'p-4', 'bg-white', 'rounded');
+            productCard.classList.add('border', 'p-4', 'bg-white', 'rounded', 'product-card');
             productCard.innerHTML = `
                 <img src="${product.image}" alt="${product.name}" class="mb-4">
                 <h3 class="text-lg font-semibold">${product.name}</h3>
