@@ -1,28 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE>
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moments</title>
-    <link rel="stylesheet" href="styles.css">
+    <title> Loader example </title>
+    <style>
+        .loading-gif {
+            max-width: 500px;
+        }
+
+        .pre-loader {
+            position: fixed;
+            z-index: 100; /** make sure this is the highest value compared to all other divs **/
+            top: 0;
+            left: 0;
+            background: #191f26;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .pre-loader.hidden {
+            animation: fadeOut 2s; /** change to 1s */
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeOut {
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Moments</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h2>Welcome to Moments</h2>
-            <p>Share your life’s fleeting moments with friends and the world.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Moments</p>
-    </footer>
-    <script src="scripts.js"></script>
+<!--- Your content goes here -->
+<p>Page content</p>
+<div class='pre-loader'>
+    <img class='loading-gif' alt='loading' src="My-Moment Favicon BR.png"/>
+</div>
+
+<!-- js to hide preloader loading is done -->
+<script type='text/javascript'>
+    window.addEventListener('load', function () {
+        document.querySelector('.pre-loader').className += ' hidden';
+    });
+</script>
 </body>
 </html>
