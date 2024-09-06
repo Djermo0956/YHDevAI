@@ -2,49 +2,8 @@
 <html lang='en'>
 <head>
     <title> Loader example </title>
-    <style>
-        .loading-gif {
-            max-width: 500px;
-        }
-
-        .pre-loader {
-            position: fixed;
-            z-index: 100; /** make sure this is the highest value compared to all other divs **/
-            top: 0;
-            left: 0;
-            background: #FFFFFF;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-        }
-
-        .pre-loader.hidden {
-            animation: fadeOut 2s; /** change to 1s */
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes fadeOut {
-            100% {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-    </style>
 </head>
 <body>
-<!--- Your content goes here -->
-<p>Page content</p>
-<div class='pre-loader'>
-    <img class='loading-gif' alt='loading' src="My-Moment Favicon BR.png"/>
-</div>
-
-<!-- js to hide preloader loading is done -->
-<script type='text/javascript'>
-    window.addEventListener('load', function () {
-        document.querySelector('.pre-loader').className += ' hidden';
-    });
-</script>
+    <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=VyQgCweY5Eus7iH6yruqbyhHvtmxYcJFnFJqu9jg8rtURVVKMkk5T0VHNFFETE85MDgyQU1FMzVSOC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 </body>
 </html>
